@@ -1,0 +1,17 @@
+<!-- Line chart -->
+@if(!isSecondItem()) {
+<div class="chart-container h-full p-3">
+  <p-chart class="" type="line" [data]="data" [options]="options"></p-chart>
+</div>
+} @else {
+<div class="chart-container p-3">
+  <p-chart
+    class=""
+    type="line"
+    [data]="secondData"
+    [options]="secondOptions"
+  ></p-chart>
+</div>
+}
+
+<!-- /Line chart -->

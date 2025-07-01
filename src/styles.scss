@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+
+// Reset styles
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// End of reset styles
+
+// Customize mat-icon
+.mat-icon {
+  width: auto !important;
+  height: auto !important;
+  font-size: inherit !important;
+}
+
+// End of customization
+
+// Shared style
+.shared-backdrop {
+  backdrop-filter: blur(56px);
+  -webkit-backdrop-filter: blur(56px);
+  background-color: rgba(19, 1, 1, 0.007);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.shared-gradient {
+  background: linear-gradient(
+    to right,
+    #f2f5fac5 0%,
+    #f1f4f8b0 40%,
+    #ffffffc5 70%
+  );
+}
+
+.shared-title {
+  font-size: 1.625rem;
+  line-height: 100%;
+  color: #fff;
+}
+
+.shared-container {
+  background-color: white;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.shared-border-clr {
+  border-color: rgba(255, 255, 255, 0.2);
+}

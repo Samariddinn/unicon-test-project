@@ -1,0 +1,89 @@
+<!-- Received missions -->
+<div class="flex my-3 justify-between">
+  <h2 class="shared-title">Kelib tushgan topshiriqlar</h2>
+  <mat-icon svgIcon="settings" />
+</div>
+
+<div class="flex gap-3 h-[334px]">
+  <!-- Left item -->
+  <div class="w-[19.28%] h-full">
+    <div class="bg-left h-full flex flex-col gap-[6.67px] rounded-[20px] p-2">
+      @for(item of recMissionData; track item.id) {
+      <div
+        class="bg-white rounded-[16px] overflow-hidden pl-4 py-[10px] pr-[10px] flex items-center justify-between"
+      >
+        <article class="flex flex-col">
+          <span class="text-[1.5rem] text-[#0BA5EC]">{{ item.count }}</span>
+          <span>{{ item.title }}</span>
+        </article>
+
+        <div class="w-[48px] h-[48px] p-3 bg-[#B9E6FE] rounded-full">
+          <mat-icon [svgIcon]="item.iconName"></mat-icon>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <!-- /Left item -->
+
+  <!-- Center bar chart -->
+  <div class="w-[39.46%] h-full flex flex-col">
+    <div class="h-full w-full">
+      <app-bar-chart class="h-full w-full block"></app-bar-chart>
+    </div>
+  </div>
+  <!-- /Center bar chart -->
+
+  <!-- Right line graph -->
+  <div class="w-[39.46%] h-full flex flex-col">
+    <!-- Header -->
+    <div
+      class="shared-gradient flex items-center justify-between pl-4 pr-2 py-2 rounded-tl-[20px] rounded-tr-[20px]"
+    >
+      <h2 class="font-[500] text-[#000]">Kelib tushgan hujjatlar</h2>
+      <div class="flex gap-2">
+        <button
+          type="button"
+          class="rounded-full cursor-pointer btn-hover p-3 text-[0.813rem]"
+          (click)="onLastWeek()"
+          [ngClass]="{
+            'active-btn': isLastWeek(),
+            'not-active': !isLastWeek()
+          }"
+        >
+          O'TGAN HAFTA
+        </button>
+        <button
+          class="rounded-full cursor-pointer btn-hover p-[12px] text-[.813rem]"
+          type="button"
+          (click)="onThisWeek()"
+          [ngClass]="{
+            'active-btn': !isLastWeek(),
+            'not-active': isLastWeek()
+          }"
+        >
+          SHU HAFTA
+        </button>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div
+      class="bg-white flex-grow rounded-br-[20px] rounded-bl-[20px] overflow-hidden"
+    >
+      @if(isLastWeek()) {
+      <app-line-chart
+        class="h-full w-full block"
+        [isSecondItem]="false"
+      ></app-line-chart>
+      } @else {
+      <app-line-chart
+        class="h-full w-full block"
+        [isSecondItem]="true"
+      ></app-line-chart>
+      }
+    </div>
+  </div>
+  <!-- /Right line graph -->
+</div>
+<!-- /Received missions -->

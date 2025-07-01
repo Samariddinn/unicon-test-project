@@ -1,0 +1,28 @@
+<!-- Documents info -->
+<div class="flex gap-3 mt-4">
+  <!-- Content -->
+  @for(item of docsData; track item.id) {
+  <div class="w-full relative w-full">
+    <div class="w-full">
+      <mat-icon
+        class="relative top-0 left-0 z-0"
+        svgIcon="documents-info-shape"
+      />
+
+      <article class="absolute flex flex-col top-0 py-3 px-4">
+        <span class="text-[#F04438] text-[2.25rem] leading-[44px]">{{
+          item.count
+        }}</span>
+      <span>{{ item.description }}</span>
+      </article>
+
+      <div class="absolute cursor-pointer bg-icon p-2 top-0 right-0">
+        <mat-icon [svgIcon]="item.iconName" />
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- /Content -->
+</div>
+<!-- /Documents info -->

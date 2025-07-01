@@ -1,0 +1,72 @@
+.calendar-container {
+  background: linear-gradient(to bottom, #256a8a, #256a8a) !important;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 8px;
+  box-sizing: border-box;
+  --p-datepicker-date-padding: 0;
+  border: none !important;
+}
+
+::ng-deep .p-datepicker-panel {
+  overflow: visible;
+  --p-datepicker-date-color: #fff !important;
+  --p-datepicker-week-day-color: #ffffff4d !important;
+  --p-datepicker-date-selected-background: #36bffa !important;
+  position: relative !important;
+  background: none;
+  color: #fff;
+  .p-datepicker-day-view {
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+
+::ng-deep .p-datepicker-header {
+  background: none;
+  display: grid !important;
+  grid-template-areas: "title prev next";
+  grid-template-columns: 80% 20px 20px;
+  justify-content: start;
+
+  .p-datepicker-title {
+    grid-area: title;
+    display: flex;
+    justify-content: start;
+    color: #fff;
+
+    &::after {
+      content: url("/icons/arrow.svg");
+    }
+  }
+
+  .p-datepicker-prev-button {
+    grid-area: prev;
+    color: #7cd4fd;
+  }
+
+  .p-datepicker-next-button {
+    grid-area: next;
+    color: #7cd4fd;
+  }
+}
+
+.time-picker {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.time-picker label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.time-display {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 16px;
+}

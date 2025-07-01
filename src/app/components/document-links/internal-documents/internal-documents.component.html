@@ -1,0 +1,39 @@
+<!-- Internal documents -->
+<div class="mt-6 text-white">
+  <h4 class="px-4 text-[0.75rem] uppercase leading-[120%]">ichki hujjatlar</h4>
+
+  <div class="flex mt-4 px-2 flex-col gap-3">
+    <!-- Links -->
+    @for(link of links; track link.id) {
+    <div
+      class="py-1 px-2 rounded-[10px]"
+      matRipple
+      [class.shared-backdrop]="link.isActive"
+    >
+      @if(!link.isDropDown) {
+      <div
+        class="flex cursor-pointer items-center gap-2"
+        (click)="onLinkClick(link.id)"
+      >
+        <mat-icon [svgIcon]="link.iconName" />
+        <span>{{ link.title }}</span>
+      </div>
+      } @else {
+      <div
+        class="flex cursor-pointer justify-between items-center gap-2"
+        [class.shared-backdrop]="link.isActive"
+      >
+        <div class="flex items-center gap-2">
+          <mat-icon [svgIcon]="link.iconName" />
+          <span>{{ link.title }}</span>
+        </div>
+
+        <mat-icon svgIcon="arrow-link-down" />
+      </div>
+      }
+    </div>
+    }
+    <!-- /Links -->
+  </div>
+</div>
+<!-- /Internal documents -->

@@ -1,0 +1,29 @@
+<!-- Sent missions -->
+<div class="flex my-3 justify-between">
+  <h2 class="shared-title">Yuborilgan topshiriqlar</h2>
+
+  <mat-icon svgIcon="settings" />
+</div>
+
+<div class="flex relative flex-wrap w-full gap-3">
+  <!-- Content -->
+  @for(item of sentMissData; track item.id) {
+  <div class="w-[323px] relative">
+    <mat-icon class="absolute" svgIcon="sent-icon-shape" />
+
+    <article class="relative py-3 px-4 flex flex-col top-0">
+      <span class="text-[2.25rem] leading-[44px]">{{ item.quantity }}</span>
+      <span>{{ item.description }}</span>
+    </article>
+
+    <div
+      class="absolute rounded-full flex items-center justify-center bg-white/40 w-[40px] h-[40px] top-0 right-0"
+    >
+      <mat-icon svgIcon="arrow-top" />
+    </div>
+  </div>
+  }
+
+  <!-- /Content -->
+</div>
+<!-- /Sent missions -->

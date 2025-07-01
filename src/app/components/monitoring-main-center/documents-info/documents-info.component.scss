@@ -1,0 +1,13 @@
+.documents-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.bg-icon {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 200px;
+  width: 40px;
+  height: 40px;
+}

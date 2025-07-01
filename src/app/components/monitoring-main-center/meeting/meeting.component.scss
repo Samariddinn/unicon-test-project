@@ -1,0 +1,33 @@
+.meeting-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: #0ba5ec;
+  padding: 4px 16px;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+
+  span {
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}
+
+.meeting-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.meeting-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(11, 165, 236, 0.35);
+  background: linear-gradient(135deg, #0ba5ec, #0073b1);
+}
+
+.meeting-btn:hover svg {
+  transform: translateY(-1px) scale(1.1);
+}

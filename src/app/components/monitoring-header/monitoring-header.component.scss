@@ -1,0 +1,33 @@
+.cs-border {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-input {
+  width: 600px;
+  padding-block: 6px;
+  padding-inline: 16px 36px;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  border-radius: 50vw;
+  color: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background-color: rgba(54, 191, 250, 0.4);
+  border-radius: 50vw;
+  cursor: pointer;
+}
+
+.header-right {
+  height: 100%;
+
+  mat-icon {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+  }
+}

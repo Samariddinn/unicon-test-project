@@ -1,0 +1,82 @@
+<!-- Login -->
+<div class="grid grid-cols-2 gap-[200px] w-full h-full">
+  <!-- Left content -->
+  <div
+    class="max-w-[560px] mx-auto h-full flex flex-col items-center justify-center"
+  >
+    <article>
+      <h2 class="text-[3rem] font-bold leading-[60px]">
+        QR kod yordamida kirish
+      </h2>
+
+      <p class="text-gray-500 mt-[2px]">
+        Kirish uchun ushbu QR kodni mobil ilova yordamida skanerlang
+      </p>
+    </article>
+
+    <div class="mt-[48px]">
+      <img class="w-[220px]" src="images/qrcode.webp" alt="Qrcode Image" />
+    </div>
+
+    <div class="w-[310px] my-[28px] flex items-center">
+      <div class="flex-grow h-px bg-gray-300"></div>
+      <span class="text-gray-500 bg-white px-2">Yoki</span>
+      <div class="flex-grow h-px bg-gray-300"></div>
+    </div>
+
+    <button
+      class="bg-blue-400 w-[400px] py-[15px] flex justify-center rounded-[6px] items-center gap-2"
+      type="button"
+    >
+      <mat-icon svgIcon="id" />
+      <span class="text-white font-[500]">One ID orqali kirish</span>
+    </button>
+
+    <div class="mt-[180px]">
+      <h3 class="text-gray-500">
+        Call-center: <a class="text-blue-400">+99871-200-46-46</a>
+      </h3>
+    </div>
+  </div>
+  <!-- /Left content -->
+
+  <!-- Right content -->
+  <div class="login-background">
+    <div class="flex items-center justify-center gap-[18px] pt-[56px]">
+      <mat-icon svgIcon="digital-logo" />
+      <h3 class="text-[1.313rem] leading-[26px] text-white">Digital Office</h3>
+    </div>
+
+    <div class="flex justify-center mt-[100px]">
+      <img src="images/login-info.webp" alt="Login Info" />
+    </div>
+
+    @for(item of digOfficeData; track item.id) { @if(item.isActive) {
+    <article
+      class="slide-in-animation mt-[48px] text-center text-white max-w-[520px] mx-auto"
+    >
+      <h2 class="text-[1.875rem] leading-[38px] font-semibold">
+        {{ item.title }}
+      </h2>
+      <p class="mt-3 leading-[22px] opacity-80">
+        {{ item.description }}
+      </p>
+    </article>
+    } }
+
+    <!-- Dots -->
+    <div class="flex items-center justify-center gap-4 mt-[48px]">
+      @for(item of digOfficeData; let i = $index; track item.id) {
+      <div
+        class="dot"
+        [class.active-dot]="item.isActive"
+        (click)="setActiveItem(i)"
+      ></div>
+      }
+    </div>
+
+    <!-- /Dots -->
+  </div>
+  <!-- /Right content -->
+</div>
+<!-- /Login -->

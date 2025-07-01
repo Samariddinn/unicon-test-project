@@ -1,0 +1,48 @@
+<!-- Rule news -->
+<div class="flex items-center my-3 gap-3">
+  <h2 class="shared-title">Qonunchilikdagi yangiliklar (lex.uz)</h2>
+
+  <div
+    class="rounded-full flex items-center justify-center bg-white/40 w-[40px] h-[40px]"
+  >
+    <mat-icon svgIcon="arrow-top" />
+  </div>
+</div>
+
+<!-- Content -->
+<div class="bg-white rounded-[20px] pl-4 pr-6">
+  @for(item of ruleNewsData; track item.id) {
+  <div class="flex items-center justify-between">
+    <div class="py-4">
+      <div class="flex max-w-[1170px] items-center gap-4">
+        <div
+          class="bg-[#EAECF5] rounded-full flex items-center justify-center min-w-[48px] h-[48px]"
+        >
+          <mat-icon svgIcon="list-icon" />
+        </div>
+
+        <article class="flex flex-col gap-1">
+          <h3 class="text-[#026AA2] font-[500]">
+            {{ item.title }}
+          </h3>
+
+          <p class="text-[#344054]">
+            {{ item.description }}
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <div
+      class="w-[40px] h-[40px] border border-gray-300 flex items-center justify-center rounded-full"
+    >
+      <mat-icon svgIcon="arrow-top-black" />
+    </div>
+  </div>
+
+  <div class="w-full h-[1px] bg-[#E4E7EC]"></div>
+  }
+</div>
+
+<!-- /Content -->
+<!-- /Rule news -->

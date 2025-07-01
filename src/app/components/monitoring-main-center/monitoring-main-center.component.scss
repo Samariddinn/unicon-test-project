@@ -1,0 +1,19 @@
+.category-links {
+  padding: 8px 12px;
+  border-radius: 50vw;
+  cursor: pointer;
+}
+
+.category-link {
+  color: #475467;
+  font-weight: 500;
+}
+
+.active-link {
+  background-color: #36bffa;
+
+  a {
+    color: #fff;
+    font-weight: 400;
+  }
+}
