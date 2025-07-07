@@ -2,19 +2,29 @@
 @use "tailwindcss";
 
 // Reset styles
-
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+// Remove up and down arrow from input
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 // End of reset styles
@@ -30,10 +40,18 @@ img {
 
 // Shared style
 .shared-backdrop {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid;
+
+  border-image-source: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
   backdrop-filter: blur(56px);
-  -webkit-backdrop-filter: blur(56px);
-  background-color: rgba(19, 1, 1, 0.007);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .shared-gradient {
@@ -59,4 +77,20 @@ img {
 
 .shared-border-clr {
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+// Animations
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-anim {
+  animation: fadeInSlide 0.3s ease-out;
 }

@@ -1,0 +1,357 @@
+<!-- Form  -->
+<div class="bg-white rounded-[10px] pt-4 pb-9 mt-3 mx-6">
+  <form>
+    <!-- Sender content-->
+
+    <div class="bg-gray-50 px-4">
+      <div class="py-3 px-6 flex gap-15 items-center">
+        <h4 class="font-[.875rem] leading-[100%] text-gray-500">Yuboruvchi</h4>
+
+        <div class="flex items-center gap-4">
+          <!-- Select  -->
+          <div
+            class="hover-state relative border bg-white flex items-center rounded-[4px] h-[40px] w-[960px] border-gray-300"
+          >
+            <div
+              (click)="onSenderSelected()"
+              mat-ripple
+              class="flex p-3 h-full w-full items-center justify-between"
+            >
+              <h3>{{ activeSelectText() }}</h3>
+              <mat-icon svgIcon="document-arrow-down" />
+            </div>
+
+            <!-- Select content -->
+            @if(isSenderSelected()) {
+            <div
+              class="absolute fade-in-anim rounded-[10px] shadow-2xl z-50 top-10 w-full"
+            >
+              <div class="flex">
+                <!-- Left content -->
+                <div
+                  class="w-[320px] p-5 rounded-tl-[10px] rounded-bl-[10px] bg-gray-100"
+                >
+                  <!-- Search input -->
+                  <div class="relative h-[38px]">
+                    <input
+                      type="text"
+                      class="search-input"
+                      placeholder="Поиск"
+                    />
+                    <mat-icon
+                      class="absolute top-[10px] left-2"
+                      svgIcon="document-search"
+                    />
+                  </div>
+                  <!-- /Search input -->
+
+                  <!-- Categories -->
+                  <div class="mt-2">
+                    <h4
+                      class="uppercase text-center text-[0.563rem] leading-[130%] text-gray-500"
+                    >
+                      Kategoriyalar
+                    </h4>
+
+                    <div class="mt-2 w-full">
+                      <ul class="w-full">
+                        @for(item of categoryData; track item.id) {
+                        <li
+                          (click)="onItemClicked(item.id)"
+                          mat-ripple
+                          class="w-full flex items-center h-[42px] rounded-[4px] py-3 px-2"
+                          [class]="{
+                            'category-active': item.isActive,
+                            'category-inactive': !item.isActive
+                          }"
+                        >
+                          <span
+                            class="uppercase text-gray-600 font-[.875rem] font-[550]"
+                          >
+                            {{ item.text }}
+                          </span>
+                        </li>
+                        }
+                      </ul>
+
+                      <!-- Create category -->
+                      <div class="mt-9 flex justify-between">
+                        <div class="flex items-center gap-[6px]">
+                          <mat-icon svgIcon="create-category" />
+                          <span
+                            class="uppercase font-[0.75rem] leading-[130%] text-gray-600 font-[500]"
+                          >
+                            Kategoriya yaratish</span
+                          >
+                        </div>
+
+                        <mat-icon svgIcon="category-setting" />
+                      </div>
+                      <!-- /Create category -->
+                    </div>
+                  </div>
+                  <!-- /Categories -->
+                </div>
+                <!-- Left  content-->
+
+                <!-- Right content -->
+                <div
+                  class="w-[640px] p-5 rounded-br-[10px] rounded-tr-[10px] bg-white"
+                >
+                  <!-- Search input  -->
+                  <div class="relative h-[38px]">
+                    <input
+                      type="text"
+                      class="search-input"
+                      placeholder="Поиск"
+                    />
+                    <mat-icon
+                      class="absolute top-[10px] left-2"
+                      svgIcon="document-search"
+                    />
+                  </div>
+                  <!-- /Search input  -->
+
+                  <!-- Facility types -->
+                  <div class="mt-2">
+                    <h4
+                      class="uppercase text-center text-[0.563rem] leading-[130%] text-gray-500"
+                    >
+                      Tashkilot turlari
+                    </h4>
+
+                    <div class="mt-2 w-full">
+                      <ul class="w-full">
+                        @for(item of facilityTypes; track item.id) {
+                        <li
+                          (click)="onSelectText(item.id)"
+                          mat-ripple
+                          class="w-full rounded-[4px] border-b border-[#E4E7EC] item py-3 px-2"
+                        >
+                          <span
+                            class="uppercase text-gray-600 font-[.875rem] font-[550]"
+                          >
+                            {{ item.text }}
+                          </span>
+                        </li>
+
+                        }
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- /Facility types -->
+                </div>
+                <!-- /Right content -->
+              </div>
+            </div>
+            }
+            <!-- /Select content -->
+          </div>
+
+          <!-- /Select  -->
+
+          <h3
+            class="cursor-pointer text-gray-500 border-b border-dashed border-gray-500 font-[.875rem] leading-[100%]"
+          >
+            Tashkilot qo'shish
+          </h3>
+        </div>
+      </div>
+    </div>
+    <!-- /Sender content-->
+
+    <!-- Only Forms Content -->
+    <div class="mt-6 px-4 w-full">
+      <!-- First row -->
+      <div class="row-style w-full !mt-0">
+        <!-- Document type input  -->
+        <div class="relative w-full">
+          <app-select
+            selectId="DocumentType"
+            [selectData]="documentTypesData"
+            class="w-full"
+            label="Hujjat turi"
+            activeSelectText="Ichki buyruq"
+            [isTextBlack]="true"
+          />
+        </div>
+
+        <div class="relative overflow-visible w-full">
+          <app-select
+            selectId="deliveryMethod"
+            class="w-full"
+            label="Hujjatning yetkazilishi"
+            activeSelectText="Hujjatning yetkazilishi"
+            [selectData]="delDocumentsData"
+            (selected)="onDeliverySelected($event)"
+          />
+        </div>
+
+        <div class="relative w-full">
+          <app-select
+            selectId="regJournal"
+            [selectData]="regJournalData"
+            class="w-full"
+            label="Ro'yxatga olish jurnali"
+            activeSelectText="Ro'yxatga olish jurnali"
+          />
+        </div>
+
+        <!-- /Document type input -->
+      </div>
+      <!-- /First row -->
+
+      <!-- Second row -->
+      <div class="row-style">
+        <div class="main-input">
+          <label for="document-name">Hujjat nomi</label>
+          <input type="text" id="document-name" placeholder="Hujjat nomi" />
+        </div>
+
+        <div class="main-input">
+          <label for="organ-task">Yuqori turuvchi organ topshirig‘i</label>
+          <input
+            type="text"
+            id="document-name"
+            placeholder="Yuqori turuvchi organ topshirig‘i"
+          />
+        </div>
+
+        <!-- Multi tag component -->
+        <app-multi-tag-input class="w-full" />
+        <!-- /Multi tag component -->
+      </div>
+
+      <!-- /Second row -->
+
+      <!-- Third row -->
+      <div class="row-style">
+        <!-- First input -->
+        <div class="main-input">
+          <label for="entry-number">Kirish raqami</label>
+          <input type="number" id="entry-number" placeholder="Kirish raqami" />
+        </div>
+        <!-- /First input -->
+
+        <!-- Second input -->
+        <div class="main-input">
+          <label for="exit-number">Chiqish raqami</label>
+          <input type="text" id="exit-number" placeholder="Chiqish raqami" />
+        </div>
+        <!-- /Second input -->
+
+        <!-- Date pickers -->
+        <div class="flex w-full gap-4">
+          <div class="w-full">
+            <app-datepicker dateText="Kiruvchi sana" />
+          </div>
+
+          <div class="w-full">
+            <app-datepicker dateText="Chiquvchi sana " />
+          </div>
+        </div>
+        <!-- /Date pickers -->
+      </div>
+      <!-- /Third row -->
+
+      <!-- Fourth row -->
+      <div class="row-style relative">
+        <textarea
+          class="w-full h-[126px] text-gray-500 text-[.875rem] leading-[18px] border p-[10px] border-gray-200 rounded-[4px]"
+          placeholder="Qisqacha mazmuni"
+        ></textarea>
+        <mat-icon class="absolute right-2 top-2" svgIcon="textarea-icon" />
+      </div>
+      <!-- /Fourth row -->
+      <div class="w-full border mt-4 border-gray-200"></div>
+
+      <!-- Fifth row -->
+      <div class="row-style">
+        <!-- First input -->
+        <div class="main-input">
+          <label for="who-sign">Kim tomonidan imzolangan</label>
+          <input
+            type="text"
+            id="who-sign"
+            placeholder="Kim tomonidan imzolangan"
+          />
+        </div>
+        <!-- /First input -->
+
+        <!-- Second input -->
+        <div class="main-input">
+          <label for="performer">Ijrochi</label>
+          <input type="text" id="performer" placeholder="Ijrochi" />
+        </div>
+        <!-- /Second input -->
+
+        <!-- Third input -->
+        <div class="main-input">
+          <label for="phone-number">Telefon raqami</label>
+          <input type="text" id="phone-number" placeholder="Telefon raqami" />
+        </div>
+        <!-- /Third input -->
+      </div>
+      <!-- /Fifth row -->
+
+      <!-- Sixth row -->
+      <div class="mt-6 w-full">
+        <div class="flex items-center justify-between">
+          <!-- Left content -->
+          <div class="flex w-[66%] gap-4">
+            <app-select class="w-full" label="Ustxat uchun yuborish" />
+
+            <div class="flex w-full pt-8 items-center gap-2 w-full">
+              <div class="w-[24px]">
+                <mat-icon svgIcon="sent-gmail" />
+              </div>
+              <span class="text-[.875rem] leading-[130%] text-gray-600">
+                To’g’ridan to’g’ri yuborish
+              </span>
+            </div>
+          </div>
+          <!-- Left  content -->
+
+          <!-- Right content  -->
+          <div class="pt-8 flex items-center gap-6">
+            <!-- First button -->
+            <button
+              [ngClass]="{ 'active-btn': activeButton === 'shoshilinch' }"
+              mat-ripple
+              (click)="setActiveBtn('shoshilinch')"
+              type="button"
+              class="sixth-row-btn active-btn"
+            >
+              <mat-icon svgIcon="fire" />
+              <span class="text-[.875rem] leading-[115%]">Shoshilinch</span>
+            </button>
+            <!-- /First button -->
+
+            <!-- Second btn -->
+            <button
+              mat-ripple
+              type="button"
+              class="sixth-row-btn"
+              [ngClass]="{ 'active-btn': activeButton === 'xdfu' }"
+              (click)="setActiveBtn('xdfu')"
+            >
+              <mat-icon svgIcon="look-to-file" />
+              <span class="text-[.875rem] text-gray-600 leading-[115%]"
+                >XDFU / DSP</span
+              >
+            </button>
+            <!-- /Second btn -->
+          </div>
+          <!-- /Right content  -->
+        </div>
+      </div>
+      <!-- /Sixth row -->
+    </div>
+    <!-- /Only Forms Content -->
+  </form>
+</div>
+<!-- /Form  -->
+
+<!-- Footer  -->
+<app-document-form-footer />
+<!-- /Footer  -->

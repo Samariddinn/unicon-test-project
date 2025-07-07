@@ -1,0 +1,25 @@
+.cs-blur {
+  backdrop-filter: blur(56px);
+}
+
+.list-base {
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  span {
+    color: #344054;
+    font-size: 0.938rem;
+    line-height: 131%;
+  }
+}
+
+.card-hover {
+  transition: 0.3s;
+  &:hover {
+    background-color: #f2f4f7;
+  }
+}
+
+

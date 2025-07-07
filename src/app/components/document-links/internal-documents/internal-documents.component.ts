@@ -16,8 +16,31 @@ export class InternalDocumentsComponent {
   links: intDocumentsModel[] = intDocumentsData;
 
   onLinkClick(id: number): void {
+    const clickedLink = this.links.find((link) => link.id === id);
+    if (!clickedLink) return;
+
+    this.clearActiveStates();
+    this.closeAllDropdowns();
+
+    if (clickedLink.isDropDown) {
+      clickedLink.isExpanded = !clickedLink.isExpanded;
+    }
+
+    clickedLink.isActive = true;
+  }
+
+  // Close all dropdowns
+  private closeAllDropdowns(): void {
     this.links.forEach((link) => {
-      link.isActive = link.id === id;
+      if (link.isDropDown) {
+        link.isExpanded = false;
+      }
+    });
+  }
+
+  private clearActiveStates(): void {
+    this.links.forEach((link) => {
+      link.isActive = false;
     });
   }
 }

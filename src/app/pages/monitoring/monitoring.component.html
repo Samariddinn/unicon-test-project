@@ -1,27 +1,31 @@
 <!-- Monitoring component -->
 <div class="hero">
-  <app-monitoring-header />
+  <div class="">
+    <app-monitoring-header />
 
-  <!-- Main content -->
-  <main class="flex justify-between -full">
-    <!-- Left links -->
-    <div class="w-[12.5%]">
-      <app-document-links />
-    </div>
-    <!-- /Left links -->
+    <!-- Main content -->
+    <main class="flex justify-between w-full">
+      <!-- Left links -->
+      <div class="w-[12.5%] shrink-0">
+        <app-document-links />
+      </div>
+      <!-- /Left links -->
 
-    <!-- Center content -->
-    <div class="w-[83.33%] px-3 py-4">
-      <app-monitoring-main-center />
-    </div>
-    <!-- /Center content -->
+      <!-- Center content -->
+      <div
+        class="w-[83.33%] custom-scrollbar h-screen overflow-y-auto overflow-x-hidden px-3 py-4"
+      >
+        <app-monitoring-main-center />
+      </div>
+      <!-- /Center content -->
 
-    <!-- Right icons -->
-    <div class="w-[3%]">
-      <app-main-right-icons />
-    </div>
-    <!-- /Right icons -->
-  </main>
-  <!-- /Main content -->
+      <!-- Right icons -->
+      <div class="w-[3%]">
+        <app-main-right-icons />
+      </div>
+      <!-- /Right icons -->
+    </main>
+    <!-- /Main content -->
+  </div>
 </div>
 <!-- /Monitoring component -->

@@ -1,0 +1,73 @@
+<div #container class="relative">
+  <div
+    mat-ripple
+    (click)="toggleVisiblity()"
+    class="flex rounded-[50vw] cursor-pointer items-center gap-3"
+  >
+    <mat-icon svgIcon="user" />
+
+    <span class="text-white font-[.875rem]">ABBOS XAZRATOV</span>
+  </div>
+
+  @if(isOpen()) {
+  <div
+    class="absolute fade-in-anim z-20 p-4 bg-gray-100 top-14 rounded-[20px] w-[320px] left-[-30%]"
+  >
+    <div class="absolute left-[38%] top-[-10px]">
+      <mat-icon svgIcon="polygon" />
+    </div>
+
+    <div class="bg-white p-2 rounded-[12px]">
+      <div class="flex items-center gap-2">
+        <div class="relative">
+          <mat-icon svgIcon="user" />
+          <mat-icon class="absolute bottom-[5px] left-4" svgIcon="user-tick" />
+        </div>
+
+        <article>
+          <h3 class="user-info-title">Abbos Xazratov Matlab o’g’li</h3>
+          <span class="user-info-desc"> Unicon Soft </span>
+        </article>
+
+        <div
+          mat-ripple
+          class="bg-gray-100 cursor-pointer w-[43px] py-[5px] px-2 rounded-[16px]"
+        >
+          <span
+            class="text-gray-700 font-[500] text-[.75rem] leading-[18px] block"
+            >Profil
+          </span>
+        </div>
+      </div>
+      <div class="w-full bg-gray-200 h-[1px] my-2"></div>
+
+      <!-- Profile 2 -->
+      <div class="flex items-center gap-2">
+        <div>
+          <mat-icon svgIcon="abbos-avatar" />
+        </div>
+
+        <article>
+          <h3 class="user-info-title">Abbos Xazratov Matlab o’g’li</h3>
+          <span class="user-info-desc"> Unicon Soft </span>
+        </article>
+      </div>
+      <!-- /Profile 2 -->
+    </div>
+
+    <div class="mt-4 bg-white p-2 rounded-[12px] flex items-center gap-2">
+      <button
+        mat-ripple
+        type="button"
+        class="w-[32px] h-[32px] cursor-pointer flex items-center justify-center bg-gray-100 rounded-full"
+      >
+        <mat-icon svgIcon="log-out" />
+      </button>
+
+      <span class="text-[.875rem] leading-[18px] text-gray-600">
+        Tizimdan chiqish
+      </span>
+    </div>
+  </div>
+  }
+</div>

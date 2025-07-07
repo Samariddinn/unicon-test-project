@@ -1,0 +1,64 @@
+<!-- Multi tag input -->
+<div class="w-full h-[40px]">
+  <label class="font-[.875rem] leading-[115%] text-[#98A2B3]">Masalasi</label>
+
+  <div
+    class="w-full border relative rounded-[4px] border-gray-300 h-full pl-[5px] pr-2"
+    #dropdownContainer
+  >
+    <div class="flex items-center gap-1">
+      <!-- Selected tag -->
+
+      <div class="flex my-[5px] h-full gap-[3px]">
+        @for(tag of selectedTags(); track tag) {
+        <button
+          type="button"
+          class="flex items-center rounded-[3px] h-[30px] gap-[6px] bg-[#B9E6FE] border-none py-[6px] pr-[7px] pl-3"
+        >
+          <span class="text-[.875rem] leading-[125%] font-[550] text-gray-700">
+            {{ tag }}
+          </span>
+          <mat-icon
+            (click)="removeTag(tag)"
+            class="cursor-pointer"
+            svgIcon="close-tag"
+          />
+        </button>
+        }
+      </div>
+      <!-- /Selected tag -->
+
+      <!-- Add more -->
+      <div
+        class="flex cursor-pointer gap-1 items-center"
+        (click)="toggleDropDown()"
+      >
+        <mat-icon svgIcon="tag-plus" />
+        <span class="text-[.875rem] leading-[125%] text-[#026AA2]">
+          Добавить ещё
+        </span>
+      </div>
+      <!-- /Add more -->
+    </div>
+
+    @if(showDropDown()) {
+    <!-- Multi tag dropdown -->
+    <div
+      #dropdownMenu
+      class="absolute z-50 w-full top-[40px] bg-white shadow-md rounded-[10px] left-0"
+    >
+      @for(tag of availabeTags; track tag) {
+      <div
+        mat-ripple
+        class="p-3 hover:bg-[#efedf0] cursor-pointer"
+        (click)="addTag(tag)"
+      >
+        <span class="text-[1.2rem]">{{ tag }}</span>
+      </div>
+      }
+    </div>
+    <!-- /Multi tag dropdown -->
+    }
+  </div>
+</div>
+<!-- /Multi tag input -->

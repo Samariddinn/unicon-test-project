@@ -2,38 +2,107 @@
 <div class="mt-6 text-white">
   <h4 class="px-4 text-[0.75rem] uppercase leading-[120%]">ichki hujjatlar</h4>
 
-  <div class="flex mt-4 px-2 flex-col gap-3">
+  <div class="flex mt-2 px-2 flex-col gap-3">
     <!-- Links -->
-    @for(link of links; track link.id) {
-    <div
-      class="py-1 px-2 rounded-[10px]"
-      matRipple
-      [class.shared-backdrop]="link.isActive"
-    >
-      @if(!link.isDropDown) {
+    @for(link of links.slice(0, 11); track link.id) {
+    <div>
       <div
-        class="flex cursor-pointer items-center gap-2"
+        class="py-1 h-[30px] cursor-pointer flex items-center px-2 rounded-[10px]"
         (click)="onLinkClick(link.id)"
-      >
-        <mat-icon [svgIcon]="link.iconName" />
-        <span>{{ link.title }}</span>
-      </div>
-      } @else {
-      <div
-        class="flex cursor-pointer justify-between items-center gap-2"
+        matRipple
         [class.shared-backdrop]="link.isActive"
       >
+        @if(!link.isDropDown) {
         <div class="flex items-center gap-2">
           <mat-icon [svgIcon]="link.iconName" />
           <span>{{ link.title }}</span>
         </div>
+        } @else {
+        <div
+          class="flex w-full cursor-pointer justify-between items-center gap-2"
+        >
+          <div class="flex items-center gap-2">
+            <mat-icon [svgIcon]="link.iconName" />
+            <span>{{ link.title }}</span>
+          </div>
 
-        <mat-icon svgIcon="arrow-link-down" />
+          <mat-icon
+            [class.rotate-180]="link.isExpanded"
+            svgIcon="arrow-link-down"
+          />
+        </div>
+        }
+      </div>
+
+      <!-- Dropdown children -->
+      @if(link.isDropDown && link.isExpanded && link.children) {
+      <div class="ml-4 mt-1 overflow-hidden transition-all duration-300">
+        @for(child of link.children; track child) {
+        <div
+          class="py-1 h-[30px] cursor-pointer flex items-center px-2 rounded-[10px] hover:bg-gray-700/50"
+          matRipple
+        >
+          <span class="text-sm opacity-80">{{ child }}</span>
+        </div>
+        }
       </div>
       }
+      <!-- /Dropdown children -->
     </div>
     }
     <!-- /Links -->
   </div>
 </div>
 <!-- /Internal documents -->
+
+<!-- Statistics -->
+<div class="mt-6 text-white">
+  <h4 class="px-4 text-[0.75rem] uppercase leading-[120%]">statistika</h4>
+
+  <div class="flex mt-[14px] flex-col gap-3 px-4">
+    @for(link of links.slice(11); track link.id) {
+    <div>
+      <div
+        class="py-1 h-[30px] cursor-pointer flex items-center px-2 rounded-[10px]"
+        (click)="onLinkClick(link.id)"
+        matRipple
+        [class.shared-backdrop]="link.isActive"
+      >
+        @if(!link.isDropDown) {
+        <div class="flex items-center gap-2">
+          <mat-icon [svgIcon]="link.iconName" />
+          <span>{{ link.title }}</span>
+        </div>
+        } @else {
+        <div
+          class="flex w-full cursor-pointer justify-between items-center gap-2"
+        >
+          <div class="flex items-center gap-2">
+            <mat-icon [svgIcon]="link.iconName" />
+            <span>{{ link.title }}</span>
+          </div>
+
+          <mat-icon svgIcon="arrow-link-down" />
+        </div>
+        }
+      </div>
+
+      <!-- Dropdown children -->
+      @if(link.isDropDown && link.isExpanded && link.children) {
+      <div class="ml-4 mt-1 overflow-hidden transition-all duration-300">
+        @for(child of link.children; track child) {
+        <div
+          class="py-1 h-[30px] cursor-pointer flex items-center px-2 rounded-[10px] hover:bg-gray-700/50"
+          matRipple
+        >
+          <span class="text-sm opacity-80">{{ child }}</span>
+        </div>
+        }
+      </div>
+      }
+      <!-- /Dropdown children -->
+    </div>
+    }
+  </div>
+</div>
+<!-- /Statistics -->

@@ -1,11 +1,21 @@
 .calendar-container {
-  background: linear-gradient(to bottom, #256a8a, #256a8a) !important;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   color: white;
   padding: 10px 8px;
+  width: 100%;
   box-sizing: border-box;
   --p-datepicker-date-padding: 0;
   border: none !important;
+}
+
+::ng-deep .p-datepicker {
+  width: 100% !important;
+}
+
+::ng-deep .p-calendar {
+  display: block;
+  width: 100% !important;
 }
 
 ::ng-deep .p-datepicker-panel {
@@ -15,6 +25,10 @@
   --p-datepicker-date-selected-background: #36bffa !important;
   position: relative !important;
   background: none;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  border: none !important;
   color: #fff;
   .p-datepicker-day-view {
     font-size: 16px;

@@ -1,0 +1,27 @@
+<div class="relative">
+    <button mat-ripple (click)="toggleDropdown()" type="button" class="language-btn">
+        <mat-icon svgIcon="uzbekistan" />
+        <span class="font-[.875rem] text-white">{{currentLang.label}}</span>
+        <mat-icon svgIcon="arrow-down" />
+      </button>
+    
+
+    @if(isOpen()) {
+        <div class="absolute bg-white shadow-md w-full rounded-full ">
+            <div class="flex flex-col gap-2">
+                @for(lang of languages; track lang.code) {
+                
+                    @if(lang.code !== currentLang.code) {
+                        <button>
+                            <mat-icon [svgIcon]="lang.icon" />
+                            <span>{{ lang.label }}</span>
+                        </button>
+                    }
+                }
+            </div>
+           
+        </div>
+    }
+    
+</div>
+

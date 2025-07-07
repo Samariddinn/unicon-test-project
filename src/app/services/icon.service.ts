@@ -13,6 +13,9 @@ export enum Icons {
   FullScreen = 'full-screen',
   Widget = 'widget',
   User = 'user',
+  UserTick = 'user-tick',
+  AbbosAvatar = 'abbos-avatar',
+  LogOut = 'log-out',
   Uzbekistan = 'uzbekistan',
   ArrowDown = 'arrow-down',
   Settings = 'settings',
@@ -83,6 +86,24 @@ export enum Icons {
   QuestionMark = 'question-mark',
   CommentIcon = 'comment-icon',
   YearIcon = 'year-icon',
+
+  // Create document icons
+  DocumentClose = 'document-close',
+  DocumentSetting = 'document-setting',
+  DocumentArrowDown = 'document-arrow-down',
+  DocumentSearch = 'document-search',
+  CreateCategory = 'create-category',
+  CategorySetting = 'category-setting',
+  CloseTag = 'close-tag',
+  TagPlus = 'tag-plus',
+  DateOpen = 'date-open',
+  TextareaIcon = 'textarea-icon',
+  SelectTick = 'select-tick',
+  CreateSelectCategory = 'create-select-category',
+  Polygon = 'polygon',
+  SentGmail = 'sent-gmail',
+  Fire = 'fire',
+  LookToFile = 'look-to-file',
 }
 
 @Injectable({

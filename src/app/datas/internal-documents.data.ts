@@ -4,6 +4,8 @@ export interface intDocumentsModel {
   isActive: boolean;
   title: string;
   isDropDown: boolean;
+  isExpanded?: boolean;
+  children?: string[];
 }
 
 export const intDocumentsData: intDocumentsModel[] = [
@@ -37,6 +39,8 @@ export const intDocumentsData: intDocumentsModel[] = [
     isActive: false,
     title: 'Yuborilgan',
     isDropDown: true,
+    isExpanded: false,
+    children: ['Yuborilgan 1', 'Yuborilgan 2'],
   },
 
   {
@@ -45,6 +49,8 @@ export const intDocumentsData: intDocumentsModel[] = [
     isActive: false,
     title: 'Kelib tushgan',
     isDropDown: true,
+    isExpanded: false,
+    children: ['Umumiy statistika', 'Foydalanuvchi statistika'],
   },
 
   {
@@ -77,6 +83,8 @@ export const intDocumentsData: intDocumentsModel[] = [
     isActive: false,
     title: 'Sektor fishka',
     isDropDown: true,
+    isExpanded: false,
+    children: ['Sector-1', 'Sector-2', 'Sector-3'],
   },
 
   {
@@ -93,5 +101,25 @@ export const intDocumentsData: intDocumentsModel[] = [
     isActive: false,
     title: 'Tahrirchi',
     isDropDown: false,
+  },
+
+  {
+    id: 12,
+    iconName: 'statistics',
+    isActive: false,
+    title: 'Statistika',
+    isDropDown: true,
+    isExpanded: false,
+    children: ['Haftalik statistikalar', 'Yillik statistikalar'],
+  },
+
+  {
+    id: 13,
+    iconName: 'reports',
+    isActive: false,
+    title: 'Hisobotlar',
+    isDropDown: true,
+    isExpanded: false,
+    children: ['Haftalik hisobot', 'Oylik hisobot'],
   },
 ];

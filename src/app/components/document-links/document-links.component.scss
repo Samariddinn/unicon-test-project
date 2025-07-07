@@ -1,9 +1,11 @@
 .document-create-btn {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #7cd4fd;
   border-radius: 10px;
   padding-block: 10px;
   width: 100%;
   cursor: pointer;
+  height: 40px;
 }

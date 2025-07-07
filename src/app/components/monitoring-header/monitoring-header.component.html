@@ -7,7 +7,7 @@
       <div class="flex items-center gap-2 pl-2">
         <mat-icon svgIcon="bar" />
         <mat-icon svgIcon="logo" />
-        <h2 class="text-white text-[.875rem] font-[500]">Digital Office</h2>
+        <h2 class="text-white text-[.875rem] font-[400]">Digital Office</h2>
       </div>
 
       <div class="relative">
@@ -24,48 +24,42 @@
     <!-- Right content -->
     <div class="flex items-center gap-6">
       <!-- Time -->
-      <span class="text-white text-[2.25rem] font-[300]">18:08</span>
+      <span class="text-white cursor-pointer text-[2.25rem] font-[300]"
+        >18:08</span
+      >
       <!-- /Time -->
 
       <!-- Gallery -->
       <div>
-        <mat-icon svgIcon="gallery" />
+        <mat-icon svgIcon="gallery" class="icon-btn" />
       </div>
       <!-- /Gallery -->
 
       <!-- Eye  -->
       <div>
-        <mat-icon svgIcon="eye" />
+        <mat-icon svgIcon="eye" class="icon-btn" />
       </div>
       <!-- /Eye  -->
 
       <!-- Full screen -->
-      <div>
-        <mat-icon svgIcon="full-screen" />
+      <div (click)="toggleFullScreen()">
+        <mat-icon svgIcon="full-screen" class="icon-btn" />
       </div>
       <!-- /Full screen -->
 
       <!-- Widget -->
       <div>
-        <mat-icon svgIcon="widget" />
+        <mat-icon svgIcon="widget" class="icon-btn" />
       </div>
       <!-- /Widget -->
 
       <div class="flex items-center gap-3">
         <!-- User -->
-        <div class="flex items-center gap-3">
-          <mat-icon svgIcon="user" />
-
-          <span class="text-white font-[.875rem]">ABBOS XAZRATOV</span>
-        </div>
+        <app-user-info-header />
         <!-- /User -->
 
         <!-- Language -->
-        <button type="button" class="language-btn">
-          <mat-icon svgIcon="uzbekistan" />
-          <span class="font-[.875rem] text-white">O'zbekcha</span>
-          <mat-icon svgIcon="arrow-down" />
-        </button>
+        <app-select-language />
         <!-- /Language -->
       </div>
     </div>

@@ -1,0 +1,59 @@
+<!-- Create document -->
+<div class="flex h-full">
+  <!-- Blurry bg -->
+  <div class="w-[17.2%] bg-[#0c0c1e]/60 backdrop-blur-xl h-full">
+    <div class="flex justify-end mt-4">
+      <button
+        type="button"
+        (click)="onDocumentClose()"
+        mat-ripple
+        class="close-btn"
+      >
+        <mat-icon svgIcon="document-close" />
+        <span class="text-white uppercase text-[0.75rem] leading-[16px]"
+          >hujjat
+        </span>
+      </button>
+    </div>
+  </div>
+  <!-- /Blurry bg -->
+
+  <!-- Main content -->
+  <div class="w-[82.8%] flex justify-between bg-[#F2F4F7] h-full">
+    <!-- Left content -->
+    <div class="w-[96.47%]">
+      <!-- Header -->
+      <div class="flex w-full justify-between items-center px-6 py-2">
+        <h2 class="pl-3 text-[1.625rem] text-gray-500 leading-[130%]">
+          Kiruvchi hujjatni ro'yxatga olish
+        </h2>
+
+        <div class="flex gap-4">
+          <button mat-ripple type="button" class="w-[40px] btn-style h-[40px]">
+            <mat-icon svgIcon="document-setting" />
+          </button>
+
+          <button
+            type="button"
+            mat-ripple
+            class="btn-style gap-2 pl-5 h-[40px] py-3 pr-[10px]"
+          >
+            <span> Шаблоны документов </span>
+
+            <mat-icon svgIcon="document-arrow-down" />
+          </button>
+        </div>
+      </div>
+      <!-- /Header -->
+
+      <app-document-form />
+    </div>
+    <!-- /Left content -->
+
+    <!-- Right links -->
+    <div class="w-[3.52%]">Right</div>
+    <!-- /Right links -->
+  </div>
+  <!-- /Main content -->
+</div>
+<!-- /Create document -->
