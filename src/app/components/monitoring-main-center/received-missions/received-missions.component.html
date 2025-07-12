@@ -17,7 +17,7 @@
           <span>{{ item.title }}</span>
         </article>
 
-        <div class="w-[48px] h-[48px] p-3 bg-[#B9E6FE] rounded-full">
+        <div class="w-[48px] h-[48px] p-3 rounded-full" [class]>
           <mat-icon [svgIcon]="item.iconName"></mat-icon>
         </div>
       </div>
@@ -43,6 +43,7 @@
       <h2 class="font-[500] text-[#000]">Kelib tushgan hujjatlar</h2>
       <div class="flex gap-2">
         <button
+          mat-ripple
           type="button"
           class="rounded-full cursor-pointer btn-hover p-3 text-[0.813rem]"
           (click)="onLastWeek()"
@@ -54,6 +55,7 @@
           O'TGAN HAFTA
         </button>
         <button
+          mat-ripple
           class="rounded-full cursor-pointer btn-hover p-[12px] text-[.813rem]"
           type="button"
           (click)="onThisWeek()"

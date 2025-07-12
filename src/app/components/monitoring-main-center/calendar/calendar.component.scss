@@ -9,6 +9,14 @@
   border: none !important;
 }
 
+::ng-deep .p-datepicker-select-month {
+  color: #fff;
+
+  &:hover {
+    color: #000;
+  }
+}
+
 ::ng-deep .p-datepicker {
   width: 100% !important;
 }
@@ -42,6 +50,7 @@
   grid-template-areas: "title prev next";
   grid-template-columns: 80% 20px 20px;
   justify-content: start;
+  border-bottom: none !important;
 
   .p-datepicker-title {
     grid-area: title;
@@ -62,6 +71,14 @@
   .p-datepicker-next-button {
     grid-area: next;
     color: #7cd4fd;
+  }
+}
+
+::ng-deep .p-datepicker-select-year {
+  color: #fff;
+
+  &:hover {
+    color: #000;
   }
 }
 

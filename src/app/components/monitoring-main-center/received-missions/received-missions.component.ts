@@ -7,10 +7,17 @@ import {
 import { BarChartComponent } from '../../charts/bar-chart/bar-chart.component';
 import { LineChartComponent } from '../../charts/line-chart/line-chart.component';
 import { CommonModule } from '@angular/common';
+import { MatRipple } from '@angular/material/core';
 
 @Component({
   selector: 'app-received-missions',
-  imports: [MatIconModule, BarChartComponent, LineChartComponent, CommonModule],
+  imports: [
+    MatIconModule,
+    BarChartComponent,
+    LineChartComponent,
+    CommonModule,
+    MatRipple,
+  ],
   templateUrl: './received-missions.component.html',
   styleUrl: './received-missions.component.scss',
 })

@@ -1,6 +1,6 @@
 <!-- Form  -->
 <div class="bg-white rounded-[10px] pt-4 pb-9 mt-3 mx-6">
-  <form>
+  <form class="h-[680px]">
     <!-- Sender content-->
 
     <div class="bg-gray-50 px-4">
@@ -299,7 +299,15 @@
         <div class="flex items-center justify-between">
           <!-- Left content -->
           <div class="flex w-[66%] gap-4">
-            <app-select class="w-full" label="Ustxat uchun yuborish" />
+            <div class="relative w-full">
+              <app-select
+                selectId="UstxatData"
+                [selectData]="ustxatData"
+                activeSelectText="Ustxat uchun yuborish"
+                class="absolute w-full"
+                label="Ustxat uchun yuborish"
+              />
+            </div>
 
             <div class="flex w-full pt-8 items-center gap-2 w-full">
               <div class="w-[24px]">

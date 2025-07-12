@@ -1,5 +1,5 @@
 <!-- Create document -->
-<div class="flex h-full">
+<div class="flex fixed inset-0 z-50 !overflow-hidden">
   <!-- Blurry bg -->
   <div class="w-[17.2%] bg-[#0c0c1e]/60 backdrop-blur-xl h-full">
     <div class="flex justify-end mt-4">
@@ -21,9 +21,11 @@
   <!-- Main content -->
   <div class="w-[82.8%] flex justify-between bg-[#F2F4F7] h-full">
     <!-- Left content -->
-    <div class="w-[96.47%]">
+    <div class="w-[96.47%] border-r border-gray-100 flex flex-col h-full">
       <!-- Header -->
-      <div class="flex w-full justify-between items-center px-6 py-2">
+      <div
+        class="flex w-full justify-between flex-shrink-0 items-center px-6 py-2"
+      >
         <h2 class="pl-3 text-[1.625rem] text-gray-500 leading-[130%]">
           Kiruvchi hujjatni ro'yxatga olish
         </h2>
@@ -46,12 +48,39 @@
       </div>
       <!-- /Header -->
 
-      <app-document-form />
+      <div class="flex-1 min-h-0 custom-scrollbar overflow-y-auto">
+        <app-document-form />
+      </div>
     </div>
     <!-- /Left content -->
 
     <!-- Right links -->
-    <div class="w-[3.52%]">Right</div>
+    <div class="w-[3.52%] px-3">
+      <div class="mb-6 pt-3">
+        <mat-icon svgIcon="settings" />
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <mat-icon
+          mat-ripple
+          class="icons-style"
+          svgIcon="cr-doc-notification"
+        />
+        <mat-icon mat-ripple class="icons-style" svgIcon="cr-doc-calendar" />
+        <mat-icon mat-ripple class="icons-style" svgIcon="cr-doc-contact" />
+        <mat-icon mat-ripple class="icons-style" svgIcon="cr-doc-list" />
+        <mat-icon mat-ripple class="icons-style" svgIcon="cr-doc-question" />
+        <mat-icon mat-ripple class="icons-style" svgIcon="cr-doc-message" />
+
+        <div class="w-full h-[1px] bg-gray-200"></div>
+
+        <mat-icon mat-ripple class="icons-style" svgIcon="cr-doc-year" />
+      </div>
+
+      <div class="mt-[650px]">
+        <mat-icon svgIcon="chat" />
+      </div>
+    </div>
     <!-- /Right links -->
   </div>
   <!-- /Main content -->

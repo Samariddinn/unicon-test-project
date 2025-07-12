@@ -1,10 +1,17 @@
 .language-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 10px;
-    background-color: rgba(54,191,250,0.4);
-    border: 1px solid rgba(54,191,250,0.4);
-    border-radius: 50vw;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background-color: rgba(54, 191, 250, 0.4);
+  border: 1px solid rgba(54, 191, 250, 0.4);
+  border-radius: 50vw;
+  cursor: pointer;
+}
+.hover-state {
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #e2e8f0;
   }
+}

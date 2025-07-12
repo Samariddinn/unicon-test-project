@@ -5,20 +5,3 @@
   background-size: cover;
   background-position: left;
 }
-
-.custom-scrollbar::-webkit-scrollbar {
-  width: 10px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: rgba(100, 100, 100, 0.4);
-  border-radius: 40px;
-}
-
-.custom-scrollbar:hover::-webkit-scrollbar-thumb {
-  background-color: rgba(100, 100, 100, 0.6);
-}

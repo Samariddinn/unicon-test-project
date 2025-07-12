@@ -1,63 +1,23 @@
-<!-- <div class="main-input">
+<div class="main-input">
   <label [for]="dateText()">{{ dateText() }}</label>
   <div class="relative">
     <input
       type="text"
       class="w-full"
-      [id]="dateText()"
-      [placeholder]="dateText()"
+      [id]="dateText()!"
+      [matDatepicker]="picker"
+      [placeholder]="dateText()!"
+      (focus)="picker.open()"
+      readonly
     />
     <mat-icon
       class="absolute top-3 right-2 cursor-pointer"
       svgIcon="date-open"
+      (click)="picker.open()"
     />
   </div>
 </div>
 
- <div class="datepicker-container">
- <div class="input-container">
-    <i class="pi pi-calendar input-icon"></i>
-    <input
-      type="text"
-      placeholder="Select date"
-      class="date-input"
-      [value]="selectedDate ? formatDate(selectedDate) : ''"
-      readonly
-    />
-    <i class="pi pi-question-circle help-icon"></i>
-  </div> 
-
-  <p-calendar
-    [(ngModel)]="selectedDate"
-    [inline]="true"
-    [showIcon]="false"
-    [showButtonBar]="false"
-    dateFormat="dd/mm/yy"
-    styleClass="custom-datepicker"
-    [monthNavigator]="false"
-    [yearNavigator]="false"
-    [defaultDate]="defaultDate"
-  >
-    <!-- Custom header template -->
-<!-- <ng-template pTemplate="header">
-      <div class="custom-header">
-        <button type="button" class="nav-button" (click)="previousYear()">
-          <i class="pi pi-angle-double-left"></i>
-        </button>
-        <button type="button" class="nav-button" (click)="previousMonth()">
-          <i class="pi pi-angle-left"></i>
-        </button>
-        <div class="month-year-display">
-          <span class="year">{{ currentYear }}</span>
-          <span class="month">{{ getMonthName(currentMonth) }}</span>
-        </div>
-        <button type="button" class="nav-button" (click)="nextMonth()">
-          <i class="pi pi-angle-right"></i>
-        </button>
-        <button type="button" class="nav-button" (click)="nextYear()">
-          <i class="pi pi-angle-double-right"></i>
-        </button>
-      </div>
-    </ng-template>
-  </p-calendar>
-</div>  -->
+<div class="flex justify-center">
+  <mat-datepicker class="shadow-md w-full h-full" #picker></mat-datepicker>
+</div>

@@ -1,5 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @use "tailwindcss";
+@use "@angular/material" as mat;
+
+:root {
+  @include mat.datepicker-overrides(
+    (
+      calendar-container-background-color: white,
+    )
+  );
+}
 
 // Reset styles
 html,
@@ -14,6 +23,10 @@ body {
 img {
   max-width: 100%;
   display: block;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 // Remove up and down arrow from input
@@ -48,7 +61,6 @@ input[type="number"] {
     rgba(255, 255, 255, 0.2) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-
   box-shadow: 0px 1px 2px 0px #1018280d;
 
   backdrop-filter: blur(56px);
@@ -56,11 +68,13 @@ input[type="number"] {
 
 .shared-gradient {
   background: linear-gradient(
-    to right,
-    #f2f5fac5 0%,
-    #f1f4f8b0 40%,
-    #ffffffc5 70%
+    84.43deg,
+    rgba(242, 245, 250, 0.765) 14.91%,
+    rgba(241, 244, 248, 0.5865) 47.7%,
+    rgba(255, 255, 255, 0.6885) 67.51%,
+    rgba(251, 254, 255, 0.85) 95.19%
   );
+  backdrop-filter: blur(24px);
 }
 
 .shared-title {
@@ -77,6 +91,23 @@ input[type="number"] {
 
 .shared-border-clr {
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.4);
+  border-radius: 40px;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.6);
 }
 
 // Animations

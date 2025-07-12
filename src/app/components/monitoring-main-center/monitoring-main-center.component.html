@@ -5,15 +5,30 @@
     <!-- Category selector -->
     <div class="bg-white rounded-[20px]">
       <ul class="py-3 px-3 flex items-center gap-2">
-        <li class="category-links">
+        <li
+          mat-ripple
+          class="category-links"
+          (click)="setActive('Yangiliklar')"
+          [ngClass]="{ 'active-link': activeLink === 'Yangiliklar' }"
+        >
           <a class="category-link">Yangiliklar</a>
         </li>
 
-        <li class="category-links active-link">
+        <li
+          mat-ripple
+          class="category-links active-link"
+          (click)="setActive('Statistika')"
+          [ngClass]="{ 'active-link': activeLink === 'Statistika' }"
+        >
           <a class="category-link">Statistika</a>
         </li>
 
-        <li class="category-links">
+        <li
+          mat-ripple
+          class="category-links"
+          (click)="setActive('Sorovnoma')"
+          [ngClass]="{ 'active-link': activeLink === 'Sorovnoma' }"
+        >
           <a class="category-link">So'rovnoma</a>
         </li>
       </ul>
@@ -36,7 +51,7 @@
     <app-rule-news />
     <!-- /Rule  news-->
   </div>
-  .
+
   <!-- /Left content -->
 
   <!-- Right content -->

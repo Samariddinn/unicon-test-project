@@ -86,6 +86,7 @@ export enum Icons {
   QuestionMark = 'question-mark',
   CommentIcon = 'comment-icon',
   YearIcon = 'year-icon',
+  Chat = 'chat',
 
   // Create document icons
   DocumentClose = 'document-close',
@@ -104,6 +105,24 @@ export enum Icons {
   SentGmail = 'sent-gmail',
   Fire = 'fire',
   LookToFile = 'look-to-file',
+
+  // Create documents footer
+  RegisterQrCode = 'register-qr-code',
+  MainFile = 'main-file',
+  Applications = 'apps',
+  RelatableDocuments = 'relatable-documents',
+  English = 'english',
+  UnitedKingdom = 'united-kingdom',
+  Russian = 'russian',
+
+  // Create document, right icons
+  CrDocNotification = 'cr-doc-notification',
+  CrDocCalendar = 'cr-doc-calendar',
+  CrDocContact = 'cr-doc-contact',
+  CrDocList = 'cr-doc-list',
+  CrDocQuestion = 'cr-doc-question',
+  CrDocMessage = 'cr-doc-message',
+  CrDocYear = 'cr-doc-year',
 }
 
 @Injectable({

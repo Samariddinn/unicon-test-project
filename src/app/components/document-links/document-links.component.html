@@ -20,8 +20,8 @@
       </div>
     </button>
 
-    @if(!isDocumentOpen()) {
-    <div class="absolute left-0 overflow-hidden top-0 z-50 h-[100%] w-full">
+    @if(isDocumentOpen()) {
+    <div class="fixed inset-0 z-50 h-[100%] w-full">
       <app-create-document class="h-full" (closed)="onBtnCloseClicked()" />
     </div>
     }

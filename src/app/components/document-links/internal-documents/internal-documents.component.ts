@@ -19,13 +19,13 @@ export class InternalDocumentsComponent {
     const clickedLink = this.links.find((link) => link.id === id);
     if (!clickedLink) return;
 
-    this.clearActiveStates();
-    this.closeAllDropdowns();
-
     if (clickedLink.isDropDown) {
       clickedLink.isExpanded = !clickedLink.isExpanded;
+    } else {
+      this.closeAllDropdowns();
     }
 
+    this.clearActiveStates();
     clickedLink.isActive = true;
   }
 

@@ -27,7 +27,7 @@ export const recMissionData: RecMissionsModel[] = [
     id: 3,
     count: 0,
     title: 'Kelishish uchun',
-    iconName: 'received-m-deal',
+    iconName: 'deal',
     bgColor: '#D0F55C',
   },
 

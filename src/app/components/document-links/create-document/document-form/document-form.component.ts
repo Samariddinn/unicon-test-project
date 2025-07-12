@@ -16,6 +16,7 @@ import { documentTypesData } from '../../../../datas/document-types/document-typ
 import { registrationJournalData } from '../../../../datas/registration-journal/registration-journal.data';
 import { CommonModule } from '@angular/common';
 import { DocumentFormFooterComponent } from '../../../document-form-footer/document-form-footer.component';
+import { ustxatData } from '../../../../datas/ustxat-data/ustxat.data';
 
 @Component({
   selector: 'app-document-form',
@@ -41,6 +42,7 @@ export class DocumentFormComponent {
   delDocumentsData: SelectModel[] = delDocumentsData;
   documentTypesData: SelectModel[] = documentTypesData;
   regJournalData: SelectModel[] = registrationJournalData;
+  ustxatData: SelectModel[] = ustxatData;
 
   onSenderSelected(): void {
     this.isSenderSelected.set(!this.isSenderSelected());
